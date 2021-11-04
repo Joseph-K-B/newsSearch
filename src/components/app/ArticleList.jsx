@@ -20,11 +20,11 @@ export default function ArticleList({ articles }) {
 ArticleList.propTypes = {
     articles: PropTypes.arrayOf(
         PropTypes.shape({
-            author: PropTypes.string.isRequired,
+            author: PropTypes.string,
             title: PropTypes.string.isRequired,
             url: PropTypes.string.isRequired,
             urlToImage: PropTypes.string.isRequired,
-            content: PropTypes.string.isRequired,
+            content: PropTypes.string,
         })
     )
 }

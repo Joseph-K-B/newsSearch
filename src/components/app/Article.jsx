@@ -18,9 +18,9 @@ export default function Article({ source, author, title, url, urlToImage, conten
 }
 
 Article.propTypes = {
-    author: PropTypes.string.isRequired,
+    author: PropTypes.string,
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     urlToImage: PropTypes.string.isRequired,
-    content: PropTypes.string.isRequired,
+    content: PropTypes.string,
 }
