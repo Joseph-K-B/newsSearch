@@ -5,7 +5,7 @@ export const fetchNews = async () => {
 }
 
 export const fetchNewsQuery = async () => {
-    const res = await fetch(`https://newsapi.org/v2/everything?q=${searchParams}&apiKey=${process.env.REACT_APP_NEWS_API}`);
+    const res = await fetch(`https://newsapi.org/v2/everything?q=${subject}&apiKey=${process.env.REACT_APP_NEWS_API}`);
     const articles = await res.json();
     return articles.articles;
 }

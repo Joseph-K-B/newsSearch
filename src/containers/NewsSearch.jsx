@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import ArticleList from '../components/app/ArticleList';
-import { fetchNews } from '../services/NewsAPI';
+import SearchControls from '../components/app/SearchControls';
+import { fetchNews, fetchNewsQuery } from '../services/NewsAPI';
 
 class NewsSearch extends Component {
     state = {
         loading: true,
         articles: [],
+        subject: ''
     }
 
     async componentDidMount() {
@@ -14,12 +16,15 @@ class NewsSearch extends Component {
     }
     
     render() {
-        const { loading, articles} = this.state;
+        const { loading, articles, subject} = this.state;
         if (loading) return <h1>Loading...</h1>;           
             return (
-                // <>
+                <>
+                    <SearchControls 
+                      subject = {subject}
+                    />
                     <ArticleList articles={articles} />
-                // </>
+                </>
             );            
     }
 }
