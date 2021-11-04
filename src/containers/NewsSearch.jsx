@@ -10,7 +10,6 @@ class NewsSearch extends Component {
 
     async componentDidMount() {
         const articles = await fetchNews();
-        console.log('ARTICLES', articles);
         this.setState({ articles, loading: false })
     }
     
