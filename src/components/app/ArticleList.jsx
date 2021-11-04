@@ -1,7 +1,7 @@
 import React from 'react';
 import Article from './Article';
 
-export default function ArticleList( articles ) {
+export default function ArticleList({ articles }) {
     const articleList = articles.map(({ author, title, url, urlToImage, content }) => (
         <li key={`${title}`}>
             <Article 

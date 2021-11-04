@@ -18,9 +18,9 @@ class NewsSearch extends Component {
         const { loading, articles} = this.state;
         if (loading) return <h1>Loading...</h1>;           
             return (
-                <>
+                // <>
                     <ArticleList articles={articles} />
-                </>
+                // </>
             );            
     }
 }
