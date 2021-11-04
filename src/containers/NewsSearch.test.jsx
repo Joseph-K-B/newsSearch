@@ -1,4 +1,5 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import React from 'react';
 import NewsSearch from './NewsSearch';
 
@@ -7,24 +8,24 @@ describe('Displays list of new articles', () => {
         render(<NewsSearch />);
         screen.getByText('Loading...');
 
-    //     const ul = await screen.findByRole('section', { name: 'articles' });
-    //     expect(ul).toMatchSnapshot();
+        const ul = await screen.findByRole('list', { name: 'articles' });
+        expect(ul).toMatchSnapshot();
 
-    //     const subjectInput = await screen.findAllByLabelText('');
-    //     userEvent.type(subjectInput, 'subject');
+        const subjectInput = await screen.findAllByLabelText('Subject');
+        userEvent.type(subjectInput, 'subject');
 
-    //     const submitButton = await screen.findByRole('button', {
-    //         name: 'apple'
-    //     });
+        const submitButton = await screen.findByRole('button', {
+            name: 'fetch-params'
+        });
 
-    //     userEvent.click(submitButton);
+        userEvent.click(submitButton);
 
-    //     return waitFor(() => {
-    //         const articles = screen.getAllByText('apple', {
-    //             exact: false
-    //         });
+        return waitFor(() => {
+            const articles = screen.getAllByText('Link', {
+                exact: false
+            });
 
-    //         expect(articles).toHaveLength(20);
-    //     });
+            expect(articles).toHaveLength(20);
+        });
     });
 });
