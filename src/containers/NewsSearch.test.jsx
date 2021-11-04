@@ -7,7 +7,24 @@ describe('Displays list of new articles', () => {
         render(<NewsSearch />);
         screen.getByText('Loading...');
 
-        const ul = await screen.findByRole('list', { name: 'articles' });
-        expect(ul).toMatchSnapshot();
-    })
-})
+    //     const ul = await screen.findByRole('section', { name: 'articles' });
+    //     expect(ul).toMatchSnapshot();
+
+    //     const subjectInput = await screen.findAllByLabelText('');
+    //     userEvent.type(subjectInput, 'subject');
+
+    //     const submitButton = await screen.findByRole('button', {
+    //         name: 'apple'
+    //     });
+
+    //     userEvent.click(submitButton);
+
+    //     return waitFor(() => {
+    //         const articles = screen.getAllByText('apple', {
+    //             exact: false
+    //         });
+
+    //         expect(articles).toHaveLength(20);
+    //     });
+    });
+});

@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../../styles/list.css'
 
 export default function Article({ source, author, title, url, urlToImage, content }) {
     return (
+        <section className='articles'>
         <figure>
             <h2>{title}</h2>
             <img src={urlToImage} alt={title} height={200} width={300}/>
@@ -14,6 +16,7 @@ export default function Article({ source, author, title, url, urlToImage, conten
                     <p>{content}</p>
             </figcaption>
         </figure>
+        </section>
     );
 }
 
