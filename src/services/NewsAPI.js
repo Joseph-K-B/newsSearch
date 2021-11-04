@@ -4,9 +4,10 @@ export const fetchNews = async () => {
     return articles.articles;
 }
 
-export const fetchNewsQuery = async () => {
+export const fetchNewsQuery = async (subject) => {
     const res = await fetch(`https://newsapi.org/v2/everything?q=${subject}&apiKey=${process.env.REACT_APP_NEWS_API}`);
     const articles = await res.json();
+    console.log('FETCH', articles.articles)
     return articles.articles;
 }
 

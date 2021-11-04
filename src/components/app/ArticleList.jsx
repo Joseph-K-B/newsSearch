@@ -23,7 +23,7 @@ ArticleList.propTypes = {
             author: PropTypes.string,
             title: PropTypes.string.isRequired,
             url: PropTypes.string.isRequired,
-            urlToImage: PropTypes.string.isRequired,
+            urlToImage: PropTypes.string,
             content: PropTypes.string,
         })
     )

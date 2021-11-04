@@ -8,13 +8,24 @@ class NewsSearch extends Component {
         loading: true,
         articles: [],
         subject: ''
-    }
+    };
 
     async componentDidMount() {
         const articles = await fetchNews();
         this.setState({ articles, loading: false })
-    }
+    };
+
+    handleSubjectInput = (e) => {
+        this.setState({ subject: event.target.value });
+    };
     
+    handleSubmit = async (e) => {
+        event.preventDefault();
+        this.setState({ loading: true });
+        const articles = await fetchNewsQuery(this.state.subject);
+        this.setState({ articles, loading: false });
+    };
+
     render() {
         const { loading, articles, subject} = this.state;
         if (loading) return <h1>Loading...</h1>;           
@@ -22,6 +33,8 @@ class NewsSearch extends Component {
                 <>
                     <SearchControls 
                       subject = {subject}
+                      onSubjectInput={this.handleSubjectInput}
+                      onSubmit={this.handleSubmit}
                     />
                     <ArticleList articles={articles} />
                 </>
