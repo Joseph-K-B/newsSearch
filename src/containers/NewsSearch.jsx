@@ -15,16 +15,13 @@ class NewsSearch extends Component {
     }
     
     render() {
-        return(
-            <>
-                if (loading) return <h1>Loading...</h1>;
-                return (
-                    <>
-                        <ArticleList articles={articles} />
-                    </>
-                )
-            </>
-        )
+        const { loading, articles} = this.state;
+        if (loading) return <h1>Loading...</h1>;           
+            return (
+                <>
+                    <ArticleList articles={articles} />
+                </>
+            );            
     }
 }
 

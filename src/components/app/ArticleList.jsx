@@ -1,11 +1,11 @@
 import React from 'react';
 import Article from './Article';
 
-export default function ArticleList({ articles }) {
-    const articleList = articles.map(({ name, author, title, url, urlToImage, content }) => (
+export default function ArticleList( articles ) {
+    const articleList = articles.map(({ author, title, url, urlToImage, content }) => (
         <li key={`${title}`}>
             <Article 
-                name={name} 
+                // name={name} 
                 author={author} 
                 title={title} 
                 url={url} 
