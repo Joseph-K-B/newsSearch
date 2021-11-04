@@ -1,14 +1,16 @@
 import React from 'react'
 
-export default function Article({ name, author, title, url, urlToImage, content }) {
+export default function Article({ source, author, title, url, urlToImage, content }) {
     return (
         <figure>
-            <img src={urlToImage} alt={title} />
+            <h2>{title}</h2>
+            <img src={urlToImage} alt={title} height={200} width={300}/>
             <figcaption>
-                {name}
-                {title} - {author}
-                {url}
-                {content}
+                <ul>
+                    <li>Author - {author}</li>   
+                    <li>Link - {url}</li>
+                </ul>
+                    <p>{content}</p>
             </figcaption>
         </figure>
     )
