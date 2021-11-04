@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function Article({ source, author, title, url, urlToImage, content }) {
     return (
@@ -8,10 +9,18 @@ export default function Article({ source, author, title, url, urlToImage, conten
             <figcaption>
                 <ul>
                     <li>Author - {author}</li>   
-                    <li>Link - {url}</li>
+                    <li><a href={url} >Link</a></li>
                 </ul>
                     <p>{content}</p>
             </figcaption>
         </figure>
-    )
+    );
+}
+
+Article.propTypes = {
+    author: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    urlToImage: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
 }
