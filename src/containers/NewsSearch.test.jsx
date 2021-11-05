@@ -12,7 +12,7 @@ describe('Displays list of new articles', () => {
         expect(ul).toMatchSnapshot();
 
         const subjectInput = await screen.findAllByLabelText('Subject');
-        userEvent.type(subjectInput, 'subject');
+        userEvent.type(subjectInput, 'China');
 
         const submitButton = await screen.findByRole('button', {
             name: 'fetch-params'
@@ -21,7 +21,7 @@ describe('Displays list of new articles', () => {
         userEvent.click(submitButton);
 
         return waitFor(() => {
-            const articles = screen.getAllByText('Link', {
+            const articles = screen.getAllByText('China', {
                 exact: false
             });
 

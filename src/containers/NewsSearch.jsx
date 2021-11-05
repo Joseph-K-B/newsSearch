@@ -28,7 +28,7 @@ class NewsSearch extends Component {
     };
 
     render() {
-        const { loading, articles, subject} = this.state;
+        const { loading, articles, subject } = this.state;
         if (loading) return <h1>Loading...</h1>;           
             return (
                 <>
